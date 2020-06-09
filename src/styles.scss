@@ -1,0 +1,95 @@
+//https://stackoverflow.com/questions/3758023/how-to-use-this-square-cursor-in-a-html-input-field/3758063#3758063
+//https://www.bypeople.com/css-lcd-text-effect/
+
+@font-face {
+  font-family: 'FixedsysExcelsior301Regular';
+  src: url('./fonts/fsex300-webfont.eot');
+  src: url('./fonts/fsex300-webfont.eot?#iefix') format('embedded-opentype'),
+  url('./fonts/fsex300-webfont.woff') format('woff'),
+  url('./fonts/fsex300-webfont.ttf') format('truetype'),
+  url('./fonts/fsex300-webfont.svg#FixedsysExcelsior301Regular') format('svg');
+  font-weight: 100;
+  font-style: normal;
+  font-smooth:never;
+}
+
+#cmd {
+    overflow: hidden;
+}
+
+#cmd span {
+    float: left;
+    padding-left: 3px;
+    white-space: pre;
+}
+
+#cursor {
+    float: left;
+    width: 7px;
+    height: 30px;
+}
+
+input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700,900,300,200);
+$pixel-size: 3px;
+body{
+&::after{
+     content:'';
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     background-image:
+     // radial-gradient(black, rgba(#000,0)),
+     linear-gradient(to top, rgba(#fff,.2) 10%, rgba(#fff,.4) 10%, rgba(#fff,.4) 10%, rgba(#fff,.6) 90%),
+     linear-gradient(to right, rgba(#f00,.7) 10%, rgba(#0f0,.7) 10%, rgba(#0f0,.7) 10%, rgba(#00f,.7) 66%);
+
+
+     background-size: $pixel-size $pixel-size ;
+     mix-blend-mode: multiply;
+ }
+}
+
+body {
+    background: #222;
+    color: #fff;
+    text-shadow: 2px 0 rgba(255,0,0,.9), -2px 0 rgba(0,255,0,.9);
+    padding: 40px;
+    //font-family: 'FixedsysExcelsior301Regular';
+    font-family: 'Source Code Pro';
+    font-size: 30px;
+// background-image: ;
+// background-size: 100% 100%;
+}
+
+#header {
+    display: flex;
+    align-items: baseline;
+    margin: 15px;
+}
+
+
+/* blinking cursor */
+#cursor {
+    background: lime;
+    line-height: 30px;
+    margin-left: 3px;
+    -webkit-animation: blink 0.8s infinite;
+    width: 8px;
+    height: 30px;
+}
+
+@-webkit-keyframes blink {
+    0% {background: #222}
+    50% {background: lime}
+    100% {background: #222}
+}
+
+
