@@ -1,0 +1,14 @@
+<div>
+
+    <div>
+        <div id="console" class="well"></div>
+    </div>
+
+    <input #input type="text" (keyup)="handleInputSize($event)"/>
+    <div #cmd id="cmd">
+        <span #span>{{inputValue}}</span>
+
+        <div #cursor id="cursor"></div>
+
+    </div>
+</div>
