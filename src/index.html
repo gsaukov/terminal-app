@@ -16,24 +16,24 @@
       // });
 
     });
-
-    var ar = new Array(37, 38, 39, 40);
-    var controlKeysKeys = function(e) {
-      if ($.inArray(e.keyCode, ar)>=0) {
-        //disable arrows
-        e.preventDefault();
-      }
-      if(e.keyCode === 13){
-        //add data to console and clear
-        var element = $("<div>" + $('input').val() + "</div>");
-        $('#console').append(element);
-        $('#cmd span').val('');
-        $('input').val('');
-      }
-    }
-
-    $(document).keydown(controlKeysKeys);
-    $(document).ready(function() {$('input').focus();});
+    //
+    // var ar = new Array(37, 38, 39, 40);
+    // var controlKeysKeys = function(e) {
+    //   if ($.inArray(e.keyCode, ar)>=0) {
+    //     //disable arrows
+    //     e.preventDefault();
+    //   }
+    //   if(e.keyCode === 13){
+    //     //add data to console and clear
+    //     var element = $("<div>" + $('input').val() + "</div>");
+    //     $('#console').append(element);
+    //     $('#cmd span').val('');
+    //     $('input').val('');
+    //   }
+    // }
+    //
+    // $(document).keydown(controlKeysKeys);
+    // $(document).ready(function() {$('input').focus();});
   </script>
 
 </head>

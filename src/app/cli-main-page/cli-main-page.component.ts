@@ -12,7 +12,9 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
   @ViewChild('span') span: ElementRef
   @ViewChild('cursor') cursor: ElementRef
 
+  arrowKeys = new Array(37, 38, 39, 40)
   inputValue: string
+  wellData = []
 
   constructor() { }
 
@@ -25,7 +27,17 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
 
   @HostListener('document:keypress', ['$event'])
   onKeyboardEvent(event: KeyboardEvent) {
-
+    if (this.arrowKeys.indexOf(event.keyCode) !== -1) {
+      //disable arrows
+      event.preventDefault()
+      event.stopPropagation()
+    }
+    if(event.keyCode === 13){
+      //add data to console and clear
+      this.wellData.push(this.inputValue)
+      this.inputValue = ''
+      this.input.nativeElement.value = ''
+    }
   }
 
   @HostListener('document:click', ['$event'])
@@ -35,7 +47,6 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
 
   handleInputSize(event: KeyboardEvent) {
     this.inputValue = this.input.nativeElement.value;
-    // $('#cmd span').text($(this).val());
   }
 
 }
