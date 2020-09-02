@@ -22,16 +22,17 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
   }
 
   ngAfterViewInit(): void {
+    this.input.nativeElement.addEventListener('keydown', event => {
+      if (this.arrowKeys.indexOf(event.keyCode) > -1) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+    })
     this.input.nativeElement.focus()
   }
 
   @HostListener('document:keypress', ['$event'])
   onKeyboardEvent(event: KeyboardEvent) {
-    if (this.arrowKeys.indexOf(event.keyCode) !== -1) {
-      //disable arrows
-      event.preventDefault()
-      event.stopPropagation()
-    }
     if(event.keyCode === 13){
       //add data to console and clear
       this.wellData.push(this.inputValue)
