@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import {CommandService} from "../services/command.service";
 
 @Component({
   selector: 'app-cli-main-page',
@@ -16,7 +17,7 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
   inputValue: string
   wellData = []
 
-  constructor() { }
+  constructor(private commandService: CommandService) { }
 
   ngOnInit(): void {
   }
@@ -35,7 +36,9 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
   onKeyboardEvent(event: KeyboardEvent) {
     if(event.keyCode === 13){
       //add data to console and clear
-      this.wellData.push(this.inputValue)
+      const value = this.inputValue
+      this.commandService.runCommand(value)
+      this.wellData.push(value)
       this.inputValue = ''
       this.input.nativeElement.value = ''
     }
