@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
 })
 export class CommandService {
 
-    commands = new Array('help', 'info')
+    commands = new Array('help', 'info', 'overview')
 
     constructor(private router: Router) {
     }
@@ -17,10 +17,26 @@ export class CommandService {
                 this.runHelpCommand()
                 return
             }
+            if(command === 'info'){
+                this.runInfoCommand()
+                return
+            }
+            if(command === 'overview'){
+                this.runOverviewCommand()
+                return
+            }
         }
     }
 
     private runHelpCommand():void {
         this.router.navigate(['/help'])
+    }
+
+    private runInfoCommand():void {
+        this.router.navigate(['/cv/info'])
+    }
+
+    private runOverviewCommand():void {
+        this.router.navigate(['/cv/overview'])
     }
 }
