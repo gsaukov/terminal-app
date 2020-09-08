@@ -26,8 +26,25 @@
 #cursor {
     float: left;
     width: 7px;
-    height: 30px;
+    height: 27px;
 }
+
+/* blinking cursor */
+#cursor {
+  background: lime;
+  line-height: 27px;
+  margin-left: 3px;
+  -webkit-animation: blink 0.8s infinite;
+  width: 7px;
+  height: 27px;
+}
+
+@-webkit-keyframes blink {
+  0% {background: #222}
+  50% {background: lime}
+  100% {background: #222}
+}
+
 
 input {
     width: 0;
@@ -54,7 +71,6 @@ body{
      linear-gradient(to top, rgba(#fff,.2) 10%, rgba(#fff,.4) 10%, rgba(#fff,.4) 10%, rgba(#fff,.6) 90%),
      linear-gradient(to right, rgba(#f00,.7) 10%, rgba(#0f0,.7) 10%, rgba(#0f0,.7) 10%, rgba(#00f,.7) 66%);
 
-
      background-size: $pixel-size $pixel-size ;
      mix-blend-mode: multiply;
  }
@@ -74,25 +90,8 @@ body {
     padding: 40px;
     //font-family: 'FixedsysExcelsior301Regular';
     font-family: 'Source Code Pro';
-    font-size: 30px;
+    font-size: 27px;
 // background-image: ;
 // background-size: 100% 100%;
 }
-
-/* blinking cursor */
-#cursor {
-    background: lime;
-    line-height: 30px;
-    margin-left: 3px;
-    -webkit-animation: blink 0.8s infinite;
-    width: 8px;
-    height: 30px;
-}
-
-@-webkit-keyframes blink {
-    0% {background: #222}
-    50% {background: lime}
-    100% {background: #222}
-}
-
 
