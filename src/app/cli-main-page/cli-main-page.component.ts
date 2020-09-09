@@ -38,7 +38,7 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
       //add data to console and clear
       const value = this.inputValue
       this.commandService.runCommand(value)
-      this.wellData.push(value)
+      // this.wellData.push(value)
       this.inputValue = ''
       this.input.nativeElement.value = ''
     }
