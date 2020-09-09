@@ -1,14 +1,16 @@
 import {Injectable} from "@angular/core";
 import {Router} from "@angular/router";
+import {DownloadCvService} from "./download-cv.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class CommandService {
 
-    commands = new Array('help', 'info', 'overview', 'education', 'employment')
+    commands = new Array('help', 'info', 'overview', 'education', 'employment', 'download')
 
-    constructor(private router: Router) {
+    constructor(private router: Router,
+                private downloadCvService: DownloadCvService) {
     }
 
     runCommand(command: string): void {
@@ -33,7 +35,10 @@ export class CommandService {
                 this.runEmploymentCommand()
                 return
             }
-
+            if(command === 'download'){
+                this.runDownloadCvCommand()
+                return
+            }
         }
     }
 
@@ -55,5 +60,9 @@ export class CommandService {
 
     private runEmploymentCommand() {
         this.router.navigate(['/cv/employment'])
+    }
+
+    private runDownloadCvCommand() {
+        this.downloadCvService.downloadCv()
     }
 }
