@@ -23,29 +23,6 @@
     white-space: pre;
 }
 
-.cursor {
-    float: left;
-    width: 7px;
-    height: 27px;
-}
-
-/* blinking cursor */
-.cursor {
-  background: lime;
-  line-height: 27px;
-  margin-left: 3px;
-  -webkit-animation: blink 0.8s infinite;
-  width: 7px;
-  height: 27px;
-}
-
-@-webkit-keyframes blink {
-  0% {background: #222}
-  50% {background: lime}
-  100% {background: #222}
-}
-
-
 input {
     width: 0;
     height: 0;
