@@ -23,6 +23,10 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
   }
 
   ngAfterViewInit(): void {
+
+    let loader = document.getElementById('loader')
+    loader.style.display = "none";
+
     this.input.nativeElement.addEventListener('keydown', event => {
       if (this.arrowKeys.indexOf(event.keyCode) > -1) {
         event.preventDefault()

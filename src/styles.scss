@@ -13,24 +13,24 @@
   font-smooth:never;
 }
 
-#cmd {
+.cmd {
     overflow: hidden;
 }
 
-#cmd span {
+.cmd span {
     float: left;
     padding-left: 3px;
     white-space: pre;
 }
 
-#cursor {
+.cursor {
     float: left;
     width: 7px;
     height: 27px;
 }
 
 /* blinking cursor */
-#cursor {
+.cursor {
   background: lime;
   line-height: 27px;
   margin-left: 3px;
