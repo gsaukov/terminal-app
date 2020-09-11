@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {CommandService} from "../services/command.service";
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-cli-main-page',
@@ -16,24 +17,28 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
   arrowKeys = new Array(37, 38, 39, 40)
   inputValue: string
   wellData = []
+  desktop: boolean
 
-  constructor(private commandService: CommandService) { }
+  constructor(private commandService: CommandService,
+              private deviceService: DeviceDetectorService) { }
 
   ngOnInit(): void {
+    this.desktop = this.deviceService.isDesktop()
   }
 
   ngAfterViewInit(): void {
 
     let loader = document.getElementById('loader')
     loader.style.display = "none";
-
-    this.input.nativeElement.addEventListener('keydown', event => {
-      if (this.arrowKeys.indexOf(event.keyCode) > -1) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-    })
-    this.input.nativeElement.focus()
+    if(this.desktop){
+      this.input.nativeElement.addEventListener('keydown', event => {
+        if (this.arrowKeys.indexOf(event.keyCode) > -1) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+      })
+      this.input.nativeElement.focus()
+    }
   }
 
   @HostListener('document:keypress', ['$event'])

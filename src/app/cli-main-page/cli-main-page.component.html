@@ -1,18 +1,30 @@
-<div>
-    <div>GSKV CLI v 0003.8411</div>
-    <div>Run 'help' for available commands. Use 'Ctrl +' 'Ctrl -' to adjust scale</div>
-    <router-outlet></router-outlet>
+
+<ng-container
+        *ngIf="desktop; then supported; else notsupported">
+</ng-container>
+
+<ng-template #notsupported>
+    <div>GSKV CLI v 0003.8411 mobile or tablet is not supported</div>
+</ng-template>
+
+<ng-template #supported>
     <div>
-        <div #console class="well" *ngFor="let message of wellData">
-            <div>{{message}}</div>
+        <div>GSKV CLI v 0003.8411</div>
+        <div>Run 'help' for available commands. Use 'Ctrl +' 'Ctrl -' to adjust scale</div>
+        <router-outlet></router-outlet>
+        <div>
+            <div #console class="well" *ngFor="let message of wellData">
+                <div>{{message}}</div>
+            </div>
+        </div>
+
+        <input #input type="text" (keyup)="handleInputSize($event)"/>
+        <div #cmd class="cmd">
+            <span #span>{{inputValue}}</span>
+
+            <div #cursor class="cursor"></div>
+
         </div>
     </div>
+</ng-template>
 
-    <input #input type="text" (keyup)="handleInputSize($event)"/>
-    <div #cmd class="cmd">
-        <span #span>{{inputValue}}</span>
-
-        <div #cursor class="cursor"></div>
-
-    </div>
-</div>
