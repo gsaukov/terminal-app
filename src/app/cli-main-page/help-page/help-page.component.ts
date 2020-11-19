@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-help-page',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpPageComponent implements OnInit {
 
-  constructor() { }
+  isUnknownCommand: boolean
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((params: Params) => {
+      this.isUnknownCommand = (params['unknownCommand'] == 'true')
+    })
   }
 
 }

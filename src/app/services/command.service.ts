@@ -40,13 +40,13 @@ export class CommandService {
                 return
             }
         } else {
-            this.runHelpCommand()
+            this.runHelpCommand(true)
             return
         }
     }
 
-    private runHelpCommand():void {
-        this.router.navigate(['/help'])
+    private runHelpCommand(unknownCommand: boolean = false):void {
+        this.router.navigate(['/help'], {queryParams: {unknownCommand: unknownCommand}})
     }
 
     private runInfoCommand():void {
