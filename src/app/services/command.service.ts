@@ -39,6 +39,9 @@ export class CommandService {
                 this.runDownloadCvCommand()
                 return
             }
+        } else {
+            this.runHelpCommand()
+            return
         }
     }
 
