@@ -1,0 +1,14 @@
+.info-wrapper{
+    margin-top: 1rem;
+}
+
+.info-item{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.personal-image{
+    margin-left: 3rem;
+    width: 12%;
+    height: auto;
+}
