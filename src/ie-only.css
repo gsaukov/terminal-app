@@ -1,3 +1,5 @@
-body::after {
-   opacity: 0.2;
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    body::after {
+       opacity: 0.2;
+    }
 }
