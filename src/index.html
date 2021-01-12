@@ -56,13 +56,6 @@
       font-size: 23px;
     }
   </style>
-  <!--[if IE]>
-  <style>
-    body::after {
-      opacity: 0.2;
-    }
-  </style>
-  <![endif]-->
   <style>
     .cursor {
       float: left;
@@ -84,6 +77,20 @@
       0% {background: #222}
       50% {background: lime}
       100% {background: #222}
+    }
+  </style>
+  <!--  IE crap-->
+  <style>
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        body::after {
+           opacity: 0.2;
+        }
+    }
+
+    @supports (-ms-ime-align:auto) {
+        body::after {
+           opacity: 0.2;
+        }
     }
   </style>
 </head>
