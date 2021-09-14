@@ -41,7 +41,7 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
     }
   }
 
-  @HostListener('document:keypress', ['$event'])
+  @HostListener('document:oninput', ['$event'])
   onKeyboardEvent(event: KeyboardEvent) {
     if(event.keyCode === 13){
       //add data to console and clear
