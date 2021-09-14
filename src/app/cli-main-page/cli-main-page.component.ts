@@ -18,27 +18,27 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
   inputValue: string
   wellData = []
   desktop: boolean
+  deviceType: string
 
   constructor(private commandService: CommandService,
               private deviceService: DeviceDetectorService) { }
 
   ngOnInit(): void {
     this.desktop = this.deviceService.isDesktop()
+    this.deviceType = this.deviceService.getDeviceInfo().device
   }
 
   ngAfterViewInit(): void {
 
     let loader = document.getElementById('loader')
     loader.style.display = "none";
-    if(this.desktop){
-      this.input.nativeElement.addEventListener('keydown', event => {
-        if (this.arrowKeys.indexOf(event.keyCode) > -1) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-      })
-      this.input.nativeElement.focus()
-    }
+    this.input.nativeElement.addEventListener('keydown', event => {
+      if (this.arrowKeys.indexOf(event.keyCode) > -1) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+    })
+    this.input.nativeElement.focus()
   }
 
   @HostListener('document:oninput', ['$event'])
