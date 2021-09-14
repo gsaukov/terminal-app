@@ -29,7 +29,6 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
   }
 
   ngAfterViewInit(): void {
-
     let loader = document.getElementById('loader')
     loader.style.display = "none";
     this.input.nativeElement.addEventListener('keydown', event => {
@@ -41,7 +40,7 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
     this.input.nativeElement.focus()
   }
 
-  @HostListener('document:oninput', ['$event'])
+  @HostListener('document:keypress', ['$event'])
   onKeyboardEvent(event: KeyboardEvent) {
     if(event.keyCode === 13){
       //add data to console and clear
