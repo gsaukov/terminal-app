@@ -12,6 +12,7 @@ import { EmploymentHistoryPageComponent } from './cli-main-page/cv-root-page/emp
 import { EducationPageComponent } from './cli-main-page/cv-root-page/education-page/education-page.component';
 import { HelpPageComponent } from './cli-main-page/help-page/help-page.component';
 import { PageNotFoundComponent } from './cli-main-page/page-not-found/page-not-found.component';
+import {CounterDirective} from './cli-main-page/page-not-found/counter.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PageNotFoundComponent } from './cli-main-page/page-not-found/page-not-f
     EmploymentHistoryPageComponent,
     EducationPageComponent,
     HelpPageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CounterDirective
   ],
   imports: [
     BrowserModule,
