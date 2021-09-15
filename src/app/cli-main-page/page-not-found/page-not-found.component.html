@@ -1,2 +1,4 @@
 <p>PAGE NOT FOUND!</p>
-<p>REDIRECTING TO MAIN IN:</p>
+<ng-container [counter]="counter" [interval]="interval" (value)="counterValue = $event">
+    <p>REDIRECTING TO MAIN IN: {{ counterValue / 100 }}</p>
+</ng-container>

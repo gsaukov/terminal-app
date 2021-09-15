@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
+  counter:number = 1000
+  interval:number = 10
+  counterValue:number
+
   constructor() { }
 
   ngOnInit(): void {
