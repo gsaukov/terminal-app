@@ -7,6 +7,7 @@ import {EducationPageComponent} from "./cli-main-page/cv-root-page/education-pag
 import {EmploymentHistoryPageComponent} from "./cli-main-page/cv-root-page/employment-history-page/employment-history-page.component";
 import {PersonalInformationPageComponent} from "./cli-main-page/cv-root-page/personal-information-page/personal-information-page.component";
 import {HelpPageComponent} from "./cli-main-page/help-page/help-page.component";
+import {PageNotFoundComponent} from './cli-main-page/page-not-found/page-not-found.component';
 
 const routes: Routes = [
 
@@ -19,6 +20,10 @@ const routes: Routes = [
           {path: 'education', component: EducationPageComponent},
           {path: 'employment', component: EmploymentHistoryPageComponent}
       ]},
+      {
+          path: '**',
+          component: PageNotFoundComponent
+      }
     ]}
 ];
 

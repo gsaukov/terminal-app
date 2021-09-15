@@ -11,6 +11,7 @@ import { CandidateOverviewPageComponent } from './cli-main-page/cv-root-page/can
 import { EmploymentHistoryPageComponent } from './cli-main-page/cv-root-page/employment-history-page/employment-history-page.component';
 import { EducationPageComponent } from './cli-main-page/cv-root-page/education-page/education-page.component';
 import { HelpPageComponent } from './cli-main-page/help-page/help-page.component';
+import { PageNotFoundComponent } from './cli-main-page/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HelpPageComponent } from './cli-main-page/help-page/help-page.component
     CandidateOverviewPageComponent,
     EmploymentHistoryPageComponent,
     EducationPageComponent,
-    HelpPageComponent
+    HelpPageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
