@@ -1,4 +1,9 @@
 <p>PAGE NOT FOUND!</p>
-<ng-container [counter]="counter" [interval]="interval" (value)="counterValue = $event">
-    <p>REDIRECTING TO MAIN IN: {{ counterValue / 100 }}</p>
+<ng-container [counter]="counter"
+              [interval]="interval"
+              (value)="counter = $event"
+              *ngIf="tryRedirect()">
+    <p>REDIRECTING TO MAIN IN: {{ counter / 100 }}</p>
 </ng-container>
+<!--router.navigate(['/'])"-->
+

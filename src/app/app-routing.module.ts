@@ -19,12 +19,9 @@ const routes: Routes = [
           {path: 'overview', component: CandidateOverviewPageComponent},
           {path: 'education', component: EducationPageComponent},
           {path: 'employment', component: EmploymentHistoryPageComponent}
-      ]},
-      {
-          path: '**',
-          component: PageNotFoundComponent
-      }
-    ]}
+      ]}
+    ]},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
