@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <input #input type="text" (keyup)="handleInputSize($event)"/>
+    <input #input type="text" autocapitalize="none" (keyup)="handleInputSize($event)"/>
     <div #cmd class="cmd">
         <span #span>{{inputValue}}</span>
 
