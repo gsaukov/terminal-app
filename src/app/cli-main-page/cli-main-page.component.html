@@ -17,7 +17,8 @@
         </div>
     </div>
 
-    <input #input type="text" autocapitalize="none" (keyup)="handleInputSize($event)"/>
+    <input #input type="text" autocapitalize="none" (keyup)="handleInputSize($event)"
+           onfocus="this.value = this.value"/>
     <div #cmd class="cmd">
         <span #span>{{inputValue}}</span>
 

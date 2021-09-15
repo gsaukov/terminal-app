@@ -58,7 +58,7 @@ export class CliMainPageComponent implements OnInit, AfterViewInit  {
   }
 
   handleInputSize(event: KeyboardEvent) {
-    this.inputValue = this.input.nativeElement.value;
+    this.inputValue = this.input.nativeElement.value
   }
 
 }
